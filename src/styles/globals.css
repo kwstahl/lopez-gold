@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+
+/* ===== FORCE LUXURY BLACK CTA BUTTONS (wins over Figma export) ===== */
+
+/* 1) Make Tailwind utilities win when used (bg-black, text-white, etc.) */
+.bg-black { background-color: #000 !important; }
+.text-white { color: #fff !important; }
+.hover\:bg-black\/90:hover { background-color: rgba(0,0,0,0.9) !important; }
+
+/* 2) If something is still forcing gray on ALL buttons, nuke it:
+   Default buttons become black.
+*/
+button {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #000 !important;
+}
+
+/* 3) But keep "icon buttons" (social icons, back arrows) from becoming black blobs.
+   Any button that has an svg and does NOT contain typical text elements -> treat as icon button.
+*/
+button:has(svg):not(:has(span)):not(:has(p)):not(:has(h1)):not(:has(h2)):not(:has(h3)) {
+  background-color: #fff !important;
+  color: #111 !important;
+  border-color: #e5e7eb !important;
+}
+
+/* Nice hover for icon buttons */
+button:has(svg):not(:has(span)):not(:has(p)):not(:has(h1)):not(:has(h2)):not(:has(h3)):hover {
+  background-color: #fafafa !important;
+}
