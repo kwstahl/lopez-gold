@@ -1,5 +1,5 @@
 import Navigation from "./Navigation";
-import { Instagram, MessageCircle, ShoppingBag } from "lucide-react";
+import { Instagram, MessageCircle } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export default function Frame1() {
